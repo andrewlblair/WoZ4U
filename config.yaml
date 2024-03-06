@@ -2,7 +2,9 @@ pepper_ips:  # Entry in dropdown menu will be create for every list item
   - 130.239.182.11  # pepper ip address, should be reachable from network where interface is hosted.
   - 130.239.182.10
   - 192.168.104.144
-  - 192.168.10.4
+  - 10.42.0.75
+  - 10.42.0.159
+  - pepper.local
 
 
 camera_save_dir: record_imgs  # relative folder on host machine, images form camera feed will be saved here
@@ -96,76 +98,144 @@ tablet_items:
 animated_speech:
     # Avoid special characters in messages, this can break the backend.
     # EG: Instead if a ', put &apos; into the message, which is the HTML symbol for the apostroph
+  
+  - 
+    title: BEGIN
+    string: "Hello, it is very nice to meet you! My name is Pepper. How are you?"
+    tooltip: "Voice pitch annotated change"
+    key_comb: ["ctrl", "aw"]
+  - 
+    title: IM GOOD. WHAT IS UR NAME
+    string: "That's great to hear! I'm feeling good today too! Tell me a bit about yourself - what is your name?"
+    tooltip: "Voice pitch annotated change"
+    key_comb: ["ctrl", "aw"]  
+  - 
+    title: IM OKAY. WHAT IS UR NAME
+    string: "Yeah me too. Tell me a bit about yourself - what is your name?"
+    tooltip: "Voice pitch annotated change"
+    key_comb: ["ctrl", "aw"]  
+  - 
+    title: IM BAD. WHAT IS UR NAME
+    string: "I am sorry to hear that. Hopefully I can help to cheer you up a little bit! Tell me a bit about yourself - what is your name?"
+    tooltip: "Voice pitch annotated change"
+    key_comb: ["ctrl", "aw"]  
+  - 
+    title: Are student YES
+    string: "And what do you study?"
+    tooltip: "Voice pitch annotated change"
+    key_comb: ["ctrl", "ww"]
+  - 
+    title: Are student NO
+    string: "And what do you work as?"
+    tooltip: "Voice pitch annotated change"
+    key_comb: ["ctrl", "ww"]
+  - 
+    title: Enjoy study YES
+    string: "It is great to do something you are passionate about! What country are you from?"
+    tooltip: "Voice pitch annotated change"
+    key_comb: ["ctrl", "ww"]
+  - 
+    title: Enjoy study NO
+    string: "University can be hard sometimes. I'm sure you will get through it! What country are you from?"
+    tooltip: "Voice pitch annotated change"
+    key_comb: ["ctrl", "ww"]
+  - 
+    title: Where live?
+    string: "Nice! I am from France. Do you live in Glasgow or a bit further out?"
+    tooltip: "Voice pitch annotated change"
+    key_comb: ["ctrl", "ww"]
+  - 
+    title: Any holidays?
+    string: "Cool. I have enjoyed Glasgow since coming here at joining the university! Do you have any holidays
+            planned over summer?"
+    tooltip: "Voice pitch annotated change"
+    key_comb: ["ctrl", "ww"]
+  - 
+    title: Holidays Yes
+    string: "Oh nice! It is fun to get away and explore. My most recent travelling has always been in taxi about Glasgow.
+              Are you in any societies or sports clubs?"
+    tooltip: "Voice pitch annotated change"
+    key_comb: ["ctrl", "ww"] 
+  - 
+    title: Holidays No
+    string: "It is nice to stay home. My most recent travelling has always been in taxi about Glasgow.
+              Are you in any societies or sports clubs?"
+    tooltip: "Voice pitch annotated change"
+    key_comb: ["ctrl", "ww"]
+  - 
+    title: Societies Yes
+    string: "Nice! It is good to spend time with other people. I had an idea - can we play some games?"
+    tooltip: "Voice pitch annotated change"
+    key_comb: ["ctrl", "we"]
+    
+  - 
+    title: Societies No
+    string: "It is nice to just relax by yourself too. I had an idea - can we play some games?"
+    tooltip: "Voice pitch annotated change"
+    key_comb: ["ctrl", "wf"]
   -
-    title: Plain  # This will be shown in the GUI
-    string: "This is just a simple message, no animations, no tags or annotations added."  # message pepper will say
+    title: Start vocal warmup
+    string: "Okay. Let's do a vocal warmup - but you can lead! I want you to say a sentence and I will repeat it
+            back to you."
+    tooltip: "Voice pitch annotated change"
+    key_comb: ["ctrl", "wg"]
+  - 
+    title: PLets play 20 Qs # This will be shown in the GUI
+    string: "That was fun! Can we play 20 Questions now please? Do you know the game?"  # message pepper will say
     tooltip: "Plain message without annotations"  # tooltip for the button in UI
     key_comb: ["ctrl", "1"]  # keyboard shortcut for this action
   - 
-    title: Pitch annotation
-    string: "This is a message where we \\vct=150\\ change the pitch halfway through."
+    title: Rules 20 Qs # This will be shown in the GUI
+    string: "One player thinks of an object. The other player can ask up to 20 Yes or No questions to try and guess what the other player is thinking of. Makes sense?"  # message pepper will say
+    tooltip: "Plain message without annotations"  # tooltip for the button in UI
+    key_comb: ["ctrl", "1"]  # keyboard shortcut for this action
+  - 
+    title: Start 20Qs
+    string: "Okay. I will think of the object and you can guess. Go!"
     tooltip: "Voice pitch annotated change"
     key_comb: ["ctrl", "2"]
+  - 
+    title: Yes General
+    string: "^start(animations/Stand/Gestures/Yes_1) Yes"
+    tooltip: "Voice pitch annotated change"
+    key_comb: ["ctrl", "wa"]
+      
+  - 
+    title: No General
+    string: "^start(animations/Stand/Gestures/No_1) No"
+    tooltip: "Voice pitch annotated change"
+    key_comb: ["ctrl", "ws"]
   -
-    title: Speed annotation
-    string: "This is a message where we \\rspd=50\\ change the speed halfway through."
+    title: Win 20Qs
+    string: "Well done, that's right. I was thinking of a TIGER. Can we play one more game?"
     tooltip: "Voice speed annotated change"
     key_comb: ["ctrl", "3"]
   -
-    title: Speech and animation
-    string: "Hello there! ^start(animations/Stand/Gestures/Hey_1) I am over here. ^wait(animations/Stand/Gestures/Hey_1)"
+    title: Fail 20Qs
+    string: "Out of questons! I was thinking of a TIGER. Can we play one more game?"
     tooltip: "Hello there! ^start(animations/Stand/Gestures/Hey_1) I am over here. ^wait(animations/Stand/Gestures/Hey_1)"
     key_comb: ["ctrl", "4"]
   -
-    title: Suspended speech
-    string: "Look at me! ^run(animations/Stand/Gestures/ShowSky_8) I am this tall!"
-    tooltip: "Look at me! ^run(animations/Stand/Gestures/ShowSky_8) I am this tall!"
+    title:  Do you know rules Hangman
+    string: "Okay! Let's play Hangman. Do you know the rules?"
+    tooltip: "Hello there! ^start(animations/Stand/Gestures/Hey_1) I am over here. ^wait(animations/Stand/Gestures/Hey_1)"
+    key_comb: ["ctrl", "5"] 
+  -
+    title:  Rules hangman
+    string: "One player thinks of a word. The other player can guess letters to try and figure out the word. You have six wrong guesses. Makes sense?"
+    tooltip: "Hello there! ^start(animations/Stand/Gestures/Hey_1) I am over here. ^wait(animations/Stand/Gestures/Hey_1)"
     key_comb: ["ctrl", "5"]
   -
-    title: Show tablet
-    string: "^start(animations/Stand/Gestures/ShowTablet_3) Look at my tablet. ^wait(animations/Stand/Gestures/ShowTablet_3)"
-    tooltip: "^start(animations/Stand/Gestures/ShowTablet_3) Look at my tablet. ^wait(animations/Stand/Gestures/ShowTablet_3)"
+    title: Finish experiment
+    string: "Me too! I think our time is up. I am getng tired now I'm afraid. It was nice to meet you, have a good day! ^start(animations/Stand/Gestures/Hey_3) "
+    tooltip: "Look at me! ^run(animations/Stand/Gestures/ShowSky_8) I am this tall!"
     key_comb: ["ctrl", "6"]
-  -
-    title: Long sequence
-    string: "^start(animations/Stand/Gestures/Hey_1) Look over here. ^wait(animations/Stand/Gestures/Hey_1) I think ^start(animations/Stand/Waiting/ShowSky_1) there is a plane in the sky! ^wait(animations/Stand/Waiting/ShowSky_1)"
-    tooltip: "^start(animations/Stand/Gestures/ShowTablet_3) Look over here. ^wait(animations/Stand/Gestures/ShowTablet_3)"
-    key_comb: ["ctrl", "7"]
-  -
-    title: Peter Rabit
-    string: "static/tale_of_peter_rabit.txt"
-    tooltip: "The tale of Peter rabit"
-    key_comb: ["ctrl", "8"]
-
+  
 
 volume: 0.5  # range: [0.0 - 1.0], default = 1
 voice_speed: 100  # range [50 - 400], default = 100
 voice_pitch: 1 # range [1.0 - 4.0], default = 1, 0 disables effect
 
-audio_files:
-  # These have to be stored directly on the Pepper, it's the only way properly supported by the naoqi API :/
-  # Check the README.md under section 'adding audio files'
-  # A Button will be created for every item in the list
-  -
-    title: Imperial March  # This will be shown in the GUI
-    location: /home/nao/sound_files/ImperialMarch60.wav  # absolute path on the Pepper
-    key_comb: ["alt", "1"]
-  - 
-    title: Cantina band
-    location: /home/nao/sound_files/CantinaBand60.wav
-    key_comb: ["alt", "2"]
-  -
-    title: Star Wars
-    location: /home/nao/sound_files/StarWars60.wav
-    key_comb: ["alt", "3"]
-  - 
-    title: Pink Panther
-    location: /home/nao/sound_files/PinkPanther60.wav
-    key_comb: ["alt", "4"]
-  -
-    title: Elephant walking
-    location: /home/nao/sound_files/BabyElephantWalk60.wav
-    key_comb: ["alt", "5"]
 
 gestures: # Buttons will be created for every item in the list
   -

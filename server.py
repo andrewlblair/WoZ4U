@@ -79,7 +79,7 @@ except socket.gaierror:
     global HOST_IP
     HOST_IP = socket.gethostbyname(socket.gethostname())
 
-FLASK_PORT = 5000
+FLASK_PORT = 5002
 FLASK_HOME = "http://" + HOST_IP + ":" + str(FLASK_PORT) + "/"
 
 
